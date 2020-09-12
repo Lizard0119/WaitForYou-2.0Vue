@@ -7,13 +7,16 @@ import Vant from 'vant';
 import 'vant/lib/index.css';
 import Axios from 'axios'
 import VueCookie from 'vue-cookie'
-
+import bottom from './components/public/bottom.vue'
 // import {ZegoExpressEngine} from 'zego-express-engine-webrtc'
 
 Vue.config.productionTip = false
 Vue.prototype.$axios = Axios;
 Vue.use(Vant);
 Vue.use(VueCookie)
+
+
+Vue.component('my-bottom',bottom);
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
