@@ -27,7 +27,6 @@
             </van-card>
 
           </div>
-
         </van-list>
       </van-pull-refresh>
     </div>
