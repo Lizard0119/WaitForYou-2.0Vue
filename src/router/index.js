@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import create from '@/components/interview/create'
 import myInterview from '@/components/interview/myInterview'
+import JobIndex from "../components/job/JobIndex";
 
 Vue.use(Router)
 
@@ -20,6 +21,11 @@ export default new Router({
       path: '/myInterview',
       name: 'myInterview',
       component: myInterview
+    },
+    {
+      path: '/jobindex',
+      name: 'JobIndex',
+      component: JobIndex
     }
   ]
 })
