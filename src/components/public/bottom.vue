@@ -24,6 +24,6 @@
 
 <style scoped>
   .bottom {
-    background-color: #00d7c6;
+    background-color: #f2f2f2;
   }
 </style>
