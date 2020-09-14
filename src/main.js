@@ -8,6 +8,9 @@ import 'vant/lib/index.css';
 import Axios from 'axios'
 import VueCookie from 'vue-cookie'
 import bottom from './components/public/bottom.vue'
+import JobHead from "./components/job/JobHead";
+import SearchBar from "./components/job/SearchBar";
+
 // import {ZegoExpressEngine} from 'zego-express-engine-webrtc'
 
 Vue.config.productionTip = false
@@ -17,6 +20,8 @@ Vue.use(VueCookie)
 
 
 Vue.component('my-bottom',bottom);
+Vue.component('my-JobHead',JobHead);
+Vue.component('my-searchBar',SearchBar);
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
