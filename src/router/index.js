@@ -4,6 +4,10 @@ import HelloWorld from '@/components/HelloWorld'
 import create from '@/components/interview/create'
 import myInterview from '@/components/interview/myInterview'
 import AllJob from "../components/job/AllJob";
+import faxian from "../components/job/faxian";
+import Select from "../components/job/Select";
+import SelectSearch from "../components/job/SelectSearch";
+import SearchCompany from "../components/job/SearchCompany";
 
 Vue.use(Router)
 
@@ -11,8 +15,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      name: 'AllJob',
+      component: AllJob
     }, {
       path: '/create',
       name: 'create',
@@ -26,6 +30,26 @@ export default new Router({
       path: '/allJob',
       name: 'AllJob',
       component: AllJob
+    },
+    {
+      path: '/faxian',
+      name: 'faxian',
+      component: faxian
+    },
+    {
+      path: '/select',
+      name: 'Select',
+      component: Select
+    },
+    {
+      path: '/SelectSearch',
+      name: 'SelectSearch',
+      component: SelectSearch
+    },
+    {
+      path: '/SearchCompany',
+      name: 'SearchCompany',
+      component: SearchCompany
     }
   ]
 })

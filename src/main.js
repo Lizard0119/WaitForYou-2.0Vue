@@ -10,6 +10,7 @@ import VueCookie from 'vue-cookie'
 import bottom from './components/public/bottom.vue'
 import JobHead from "./components/job/JobHead";
 import SearchBar from "./components/job/SearchBar";
+import JobTop from "./components/job/JobTop";
 
 // import {ZegoExpressEngine} from 'zego-express-engine-webrtc'
 
@@ -22,6 +23,7 @@ Vue.use(VueCookie)
 Vue.component('my-bottom',bottom);
 Vue.component('my-JobHead',JobHead);
 Vue.component('my-searchBar',SearchBar);
+Vue.component('my-JobTop',JobTop);
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

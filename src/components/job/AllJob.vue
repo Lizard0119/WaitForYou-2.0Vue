@@ -1,6 +1,7 @@
 <template>
   <div>
-    <my-searchBar></my-searchBar>
+<!--    <my-searchBar></my-searchBar>-->
+    <my-JobTop></my-JobTop>
     <my-JobHead></my-JobHead>
     <div class="job-list">
 
