@@ -1,6 +1,6 @@
 <template>
   <div>
-<!--    <my-searchBar></my-searchBar>-->
+    <!--    <my-searchBar></my-searchBar>-->
     <my-JobTop></my-JobTop>
     <my-JobHead></my-JobHead>
     <div class="job-list">
@@ -17,7 +17,9 @@
           class="list"
         >
           <div>
-            <van-card v-for="item in list" :key="item.jobTableSid">
+            <van-card v-for="item in list"
+                      :key="item.jobTableSid"
+                      :thumb="item.jobimg">
 
               <template #tags>
                 <div align="left">

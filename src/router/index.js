@@ -8,6 +8,7 @@ import faxian from "../components/job/faxian";
 import Select from "../components/job/Select";
 import SelectSearch from "../components/job/SelectSearch";
 import SearchCompany from "../components/job/SearchCompany";
+import CompanyDesc from "../components/job/CompanyDesc";
 
 Vue.use(Router)
 
@@ -50,6 +51,11 @@ export default new Router({
       path: '/SearchCompany',
       name: 'SearchCompany',
       component: SearchCompany
+    },
+    {
+      path: '/CompanyDesc',
+      name: 'CompanyDesc',
+      component: CompanyDesc
     }
   ]
 })
