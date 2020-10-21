@@ -2,7 +2,7 @@
   <div>
     <div class="searchdiv">
       <van-nav-bar class="abc"
-                   title="查公司"
+                   title="查职位"
                    left-text="返回"
                    left-arrow
                    @click-left="onClickLeft"
@@ -12,7 +12,7 @@
 
         v-model="value"
         show-action
-        label="搜公司"
+        label="搜职位"
         placeholder="请输入搜索关键词"
         @search="onSearch"
       >
@@ -34,22 +34,25 @@
         >
           <div>
             <van-card v-for="item in list"
-                      :key="item.companyid"
-                      :desc="item.companyshortname"
+                      :key="item.jobTableSid"
+                      :title="item.companyshortname"
                       :thumb="item.companyimg"
-                      @click="Companypage(item.companyid)"
-            >
-
+                      @click="Companypage(item.companyid)">
               <template #tags>
                 <div align="left">
-                  <van-tag plain type="danger" size="20">{{ item.businessname }}</van-tag>
+                  <van-tag plain type="danger">{{ item.jobname }}</van-tag>
                 </div>
-                <div align="left" class="a">
+                <div align="left">
+                  <van-tag plain>{{ item.province }}</van-tag>
+                </div>
+                <div align="left">
+                  <van-tag plain>{{ item.city }}</van-tag>
+                </div>
+                <div align="left">
                   <van-tag plain>{{ item.companyname }}</van-tag>
                 </div>
-                <div align="left" class="a">
-                  <van-tag plain>{{ item.province }}</van-tag>
-                  <van-tag plain>{{ item.city }}</van-tag>
+                <div align="left">
+                  <van-tag plain type="danger">{{ item.businessname }}</van-tag>
                 </div>
               </template>
 
@@ -109,7 +112,7 @@ export default {
         //请求后端数据
         //初始page=1，size=10
         var a = val;
-        axios.get("http://localhost/wfy-search/search/searchCompanyByname/" + a + "/" + this.page + "/" + this.size)
+        axios.get("http://localhost/wfy-search/search/searchCompanByJob/" + a + "/" + this.page + "/" + this.size)
           .then(res => {
             //将后端请求到的数据加入到前端已有的list中
             this.list.push(...res.data.list);
@@ -141,7 +144,7 @@ export default {
       this.onload();
     },
     Companypage(companyid) {
-      alert(companyid)
+      // alert(companyid)
       //带参数跳转
       this.$router.push({
         path: '/CompanyDesc',
@@ -151,6 +154,13 @@ export default {
       })
     }
   },
+  mounted() {
+    //获取上个页面传过来的ID
+    let jobname = this.$route.query.jobname;
+    if (jobname!=null){
+      this.onSearch(jobname)
+    }
+  }
 }
 </script>
 

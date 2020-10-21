@@ -4,7 +4,12 @@
     <my-JobTop></my-JobTop>
     <my-JobHead></my-JobHead>
     <div class="job-list">
-
+      <div>
+        <van-notice-bar
+          left-icon="volume-o"
+          text="欢迎来到麻豆直聘，希望你在这里找到心仪的工作，祝你成功！！！"
+        />
+      </div>
       <van-pull-refresh v-model="refreshing" @refresh="onRefresh">
         <van-list
           v-model="loading"
@@ -19,7 +24,8 @@
           <div>
             <van-card v-for="item in list"
                       :key="item.jobTableSid"
-                      :thumb="item.jobimg">
+                      :thumb="item.jobimg"
+                      @click="Companypage(item.jobTabelSecondType)">
 
               <template #tags>
                 <div align="left">
@@ -42,7 +48,9 @@ import {Card} from 'vant';
 import {List} from 'vant';
 import axios from 'axios'
 import Vue from "vue";
+import {NoticeBar} from 'vant';
 
+Vue.use(NoticeBar);
 Vue.use(List);
 Vue.use(Card);
 
@@ -96,6 +104,16 @@ export default {
       this.loading = true;
       this.onLoad();
     },
+    Companypage(jobname) {
+      // alert(jobname)
+      //带参数跳转
+      this.$router.push({
+        path: '/SearchJob',
+        query: {
+          jobname
+        }
+      })
+    }
   },
 }
 </script>

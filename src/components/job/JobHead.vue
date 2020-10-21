@@ -1,12 +1,8 @@
 <template>
   <div class="jobhead">
     <van-tabs v-model="activeName" background="#f2f2f2" class="JobHead">
-      <van-tab title="全部" name="a" replace to="/allJob">内容 1</van-tab>
-      <van-tab title="附近" name="b" replace to="/faxian">内容 2</van-tab>
-      <van-tab title="最新" name="c">内容 3</van-tab>
-      <van-tab title="西安" name="d" replace to="/select">内容 4</van-tab>
-      <van-tab title="筛选" name="e">内容 5</van-tab>
-      <van-tab title="关键词" name="f">内容 6</van-tab>
+      <van-tab title="职位" name="a" replace to="/allJob"></van-tab>
+      <van-tab title="公司" name="b" replace to="/AllCompany"></van-tab>
     </van-tabs>
 
   </div>

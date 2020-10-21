@@ -1,13 +1,11 @@
 <template>
-  <div>
+  <div class="aaa">
     <div class="searchdiv">
-      <van-nav-bar
-        title="查公司"
-        left-text="返回"
-        right-text="按钮"
-        left-arrow
-        @click-left="onClickLeft"
-        @click-right="onClickRight"
+      <van-nav-bar class="abc"
+                   title="查公司"
+                   left-text="返回"
+                   left-arrow
+                   @click-left="onClickLeft"
       />
 
       <van-search
@@ -18,9 +16,6 @@
         placeholder="请输入搜索关键词"
         @search="onSearch"
       >
-<!--        <template #action>-->
-<!--          <div @click="onSearch">搜索</div>-->
-<!--        </template>-->
       </van-search>
     </div>
 
@@ -43,7 +38,7 @@
                       :desc="item.companyshortname"
                       :thumb="item.companyimg"
                       @click="Companypage(item.companyid)"
-                      >
+            >
 
               <template #tags>
                 <div align="left">
@@ -98,10 +93,7 @@ export default {
   methods: {
     onClickLeft() {
       Toast('返回');
-      this.$router.push("/")
-    },
-    onClickRight() {
-      Toast('按钮');
+      this.$router.push("/SelectSearch")
     },
     onSearch(val) {
       Toast(val);
@@ -149,11 +141,11 @@ export default {
       this.onload();
     },
     Companypage(companyid) {
-      alert(companyid)
+      // alert(companyid)
       //带参数跳转
       this.$router.push({
-        path:'/CompanyDesc',
-        query:{
+        path: '/CompanyDesc',
+        query: {
           companyid
         }
       })
@@ -179,9 +171,11 @@ export default {
   overflow-y: auto;
 }
 
-/*.a{*/
-/*  right: 100px;*/
-/*  bottom: 500px;*/
-/*  top: 90px;*/
-/*}*/
+.abc {
+  background-color: #eceaea;
+}
+
+.aaa {
+  background: url("../../assets/imgs/backgroundimg.jpg") no-repeat;
+}
 </style>
